@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { HotdogService } from '../services/hotdog.service';
 
 @Component({
   selector: 'app-home',
@@ -8,29 +9,16 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  constructor(private router:Router) {}
+  hotdogs = []
 
+  constructor(private router:Router, private hotdogService:HotdogService) {}
 
-hotdogList: Array<Object> = [
-  {
-    "title": "DOGÃO 1",
-    "description": "1 Salsicha, 1 Folha de alface, Tomate, Cebola e Ketchup",
-    "price": "R$ 5,50",
-    "image": "../assets/img/dogao2.jfif",
-  },
-  {
-    "title": "DOGUINHO",
-    "description": "1 Salsicha, 1 Folha de alface e mostarda",
-    "price": "R$ 3,50",
-    "image": "assets/img/dogao1.jfif",
-  },
-  {
-    "title": "Hot Dog Vegetariano",
-    "description": "1 Beringela, Pepino fatiado, alface e tomate",
-    "price": "R$ 8,50",
-    "image": "assets/img/dogao3.jpg",
+  ionViewDidEnter(){
+    this.hotdogService.getDogs().subscribe(resposta =>{
+      this.hotdogs = resposta
+    })
   }
-];
+
   detalhes(title, price, image ){
   this.router.navigate(['/finalizar-pedido', title, price, image ]);
 }

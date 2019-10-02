@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiKey: "AIzaSyC9SdMCA1ARS7s1bVYo1Whq-jrIW11NBO4",
+  authDomain: "dog10-natalia.firebaseapp.com",
+  databaseURL: "https://dog10-natalia.firebaseio.com",
+  projectId: "dog10-natalia",
+  storageBucket: "dog10-natalia.appspot.com",
+  messagingSenderId: "277328816022",
+  appId: "1:277328816022:web:5414589f4fa1cacbed9fb7"
 };
 
 /*

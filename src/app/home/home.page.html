@@ -3,20 +3,24 @@
     <ion-title>
       HOT DOG do Felix
     </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button [routerLink]="['/add-dog']">
+        <ion-icon name="add" color="danger"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-    <div *ngFor="let hot of hotdogList">
+    <div *ngFor="let hot of hotdogs">
         <ion-card>
           <ion-card-content>
               <ion-card-title class="title">
-                  {{hot.title}}
+                  {{hot.nome}}
                 </ion-card-title>
-            <ion-img src={{hot.image}} ></ion-img>
             <ion-card-subtitle class="description">
-              {{hot.description}}
+              {{hot.desc}}
             </ion-card-subtitle>
-            <h1 class="price">{{hot.price}}</h1>
+            <h1 class="price">{{hot.preco}}</h1>
             <ion-button (click) = "detalhes(hot.title, hot.price, hot.image)" expand="block" color="danger">
               <ion-icon name="card"></ion-icon>
               <p>Comprar</p>

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cadastrar Hot Dog</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <form #form="ngForm" (ngSubmit)="cadastrar(form)">
+      <ion-item>
+        <ion-label color="danger" position="floating">Nome</ion-label>
+        <ion-input name="nome" ngModel></ion-input>
+      </ion-item><br><br>
+      <ion-item>
+        <ion-label color="danger" position="floating">Preço</ion-label>
+        <ion-input name="preco" ngModel></ion-input>
+      </ion-item><br><br>
+      <ion-item>
+          <ion-label color="danger" position="floating">Descrição</ion-label>
+          <ion-textarea name="desc" rows="4" ngModel></ion-textarea>
+        </ion-item><br><br>
+      <ion-button class="ion-margin-top"type="submit" expand="block" color="danger">Cadastrar</ion-button>
+    </form>
+
+  </div>
+</ion-content>
